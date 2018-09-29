@@ -15,7 +15,7 @@
       "RPC_HOST"        : "RPC_HOST_IP",
       "RPC_PORT"        : "8545",
       "LISTENING_PORT"  : "30303",
-      "INSTANCE_NAME"   : "my instance name",
+      "INSTANCE_NAME"   : "LocalGethDocker",
       "WS_SERVER"       : "http://localhost:3000",
       "WS_SECRET"       : "internal-to-this-container",
       "VERBOSITY"       : 2
