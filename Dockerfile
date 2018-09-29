@@ -14,17 +14,18 @@ WORKDIR "/opt"
 RUN git clone https://github.com/cubedro/eth-net-intelligence-api.git
 RUN git clone https://github.com/cubedro/eth-netstats.git
 
+# install backend. Talks to the geth-docker
+# via the RPC interface defined in app.json
 WORKDIR "/opt/eth-net-intelligence-api"
 RUN npm install -g pm2
 ADD ./app.json ./app.json
 RUN npm install
 
+# install frontend
 WORKDIR "/opt/eth-netstats"
 RUN npm install
 RUN npm install -g grunt-cli
 RUN grunt
-
-EXPOSE 3000
 
 # Get the entrypoint script and make sure it is executable
 COPY docker-entrypoint.sh /usr/local/bin/
